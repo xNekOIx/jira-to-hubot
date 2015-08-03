@@ -13,8 +13,10 @@ module.exports = (robot) ->
       when "jira:issue_created" then "#{userURL} had just created issue:\n#{issue}"
       when "jira:issue_deleted" then "#{userURL} had just deleted issue:\n#{issue}"
       when "jira:issue_updated" then "#{userURL} had just updated issue:\n#{issue}"
-      when "jira:worklog_updated" then "#{userURL} had just logged time to issue:\n#{issue}"
       else null
+
+      # time logging 
+      # when "jira:worklog_updated" then "#{userURL} had just logged time to issue:\n#{issue}"
 
     if message 
       robot.messageRoom req.params.room, message
